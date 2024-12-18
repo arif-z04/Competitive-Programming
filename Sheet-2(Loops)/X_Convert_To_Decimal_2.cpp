@@ -4,16 +4,27 @@ using namespace std;
 
 int main()
 {
-    int n; cin >> n;
 
-    int bin_digit = 0;
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        long int dec;
+        cin >> dec;
+        int i = 0;
+        int num = dec;
+        long int sum = 0;
+        
+        while(num > 0){
+            int digit = num % 2;
+            num /= 2;
+            if(digit == 1){
+                sum += pow(2, i);   
+                i++;
+            }
+        }
 
-    while(n > 0){
-        int binary = n % 2;
-        bin_digit = binary + bin_digit * 10;
-        n = n / 2;
+        cout << sum << endl;
     }
-    
-    cout << bin_digit << endl;
     return 0;
 }
