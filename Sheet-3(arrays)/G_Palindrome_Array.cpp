@@ -13,18 +13,24 @@ int main()
         cin >> arr[i];
     }
 
-    int isPalindrome = 0;
-    for(int i = 0; i < n; i++){
-        if(arr[i] == arr[n - i - 1]){
-            isPalindrome = 1;
-        } else {
-            isPalindrome = 0;
+    bool isPalindrome = true;
+    for (int i = 0; i < n / 2; i++)
+    {
+        if (arr[i] != arr[n - i - 1])
+        {
+            isPalindrome = false;
+            break;
         }
     }
-    if(isPalindrome){
+
+    if (isPalindrome)
+    {
         cout << "YES" << endl;
-    } else {
+    }
+    else
+    {
         cout << "NO" << endl;
     }
+    
     return 0;
 }
