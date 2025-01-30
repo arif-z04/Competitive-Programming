@@ -4,11 +4,11 @@ using namespace std;
 
 int main()
 {
-    string s1, s2;
-    cin >> s1 >> s2;
-
-    cout << s1.size() << " " << s2.size() << endl;
-    cout << s1 + s2 << endl;
-    
+    string a, b;
+    cin >> a >> b;
+    cout << a.size() << " " << b.size() << endl;
+    cout << a << b << endl;
+    swap(a[0], b[0]);
+    cout << a << " " << b << endl;
     return 0;
 }
