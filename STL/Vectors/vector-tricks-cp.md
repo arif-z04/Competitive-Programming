@@ -192,4 +192,9 @@ Try these problems on **Codeforces, Leetcode, or AtCoder** using the tricks:
 4️⃣ **Rotate an array efficiently** (`rotate()`)  
 5️⃣ **Merge two sorted arrays** (`merge()`)  
 
-🚀 **Master these tricks to boost your CP performance!** 🚀  
+🚀 **Master these tricks to boost your CP performance!** 🚀 
+
+---
+### Check `sheet-1.md` for practice.
+
+---
