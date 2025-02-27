@@ -10,9 +10,7 @@ int main(){
     s.push(30);
 
     cout << "Top element: " << s.top() << endl;
-
     s.pop();
-
     cout << "After pop, top element: " << s.top() << endl;
 
     if(s.empty()){
