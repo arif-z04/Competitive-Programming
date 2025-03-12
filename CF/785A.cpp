@@ -149,19 +149,36 @@ template <typename T, typename S> ostream& operator<<(ostream& os, const pair<T,
 // array<T, n> a = {}
 
 
-void solve(){
+void solve()
+{
+    int n,sum;
+    string str;
 
-    set<int> st;
-    for(int i = 0; i < 4; i++){
-        int x;
-        cin >> x;
-        st.insert(x);
+    while (cin >> n)
+    {
+        sum = 0;
+
+        while (n--)
+        {
+            cin >> str;
+
+            if (str == "Tetrahedron")
+                sum += 4;
+            else if (str == "Cube")
+                sum += 6;
+            else if (str == "Octahedron")
+                sum += 8;
+            else if (str == "Dodecahedron")
+                sum += 12;
+            else if (str == "Icosahedron")
+                sum += 20;
+        }
+
+        cout << sum << endl;
     }
-
-    int count = 4 - sz(st);
-    cout << count << ln;
 }
 int main(){
+
     stop_sync;
     untie_ios;
     solve();

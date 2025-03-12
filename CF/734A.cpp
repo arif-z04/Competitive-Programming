@@ -150,18 +150,23 @@ template <typename T, typename S> ostream& operator<<(ostream& os, const pair<T,
 
 
 void solve(){
-
-    set<int> st;
-    for(int i = 0; i < 4; i++){
-        int x;
-        cin >> x;
-        st.insert(x);
+    int n;
+    cin >> n;
+    string g;
+    cin >> g;
+    int a(0), d(0);
+    for(char c:g){
+        c == 'A'? a++:d++;
     }
 
-    int count = 4 - sz(st);
-    cout << count << ln;
+    string msg = (a>d) ? "Anton" : "Danik";
+    if(a==d) msg = "Friendship";
+
+    cout << msg << "\n";
+
 }
 int main(){
+
     stop_sync;
     untie_ios;
     solve();

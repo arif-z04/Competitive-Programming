@@ -148,20 +148,20 @@ template <typename T, typename S> ostream& operator<<(ostream& os, const pair<T,
 
 // array<T, n> a = {}
 
+string reverseStr(string s){
+    string res = "";
+    for(int i = sz(s) - 1; i >= 0; --i) res += s[i];
+    return res;
+}
 
 void solve(){
-
-    set<int> st;
-    for(int i = 0; i < 4; i++){
-        int x;
-        cin >> x;
-        st.insert(x);
-    }
-
-    int count = 4 - sz(st);
-    cout << count << ln;
-}
+    string s, t;
+    cin >> s >> t;
+    string msg = (s == reverseStr(t)) ? "YES" : "NO";
+    cout << msg << ln;
+}   
 int main(){
+
     stop_sync;
     untie_ios;
     solve();

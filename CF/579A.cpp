@@ -149,19 +149,27 @@ template <typename T, typename S> ostream& operator<<(ostream& os, const pair<T,
 // array<T, n> a = {}
 
 
-void solve(){
-
-    set<int> st;
-    for(int i = 0; i < 4; i++){
-        int x;
-        cin >> x;
-        st.insert(x);
+void solve2() {
+    int n; cin >> n;
+    int cnt = 0;
+    while (n) {
+        n &= (n - 1); // Clear the least significant set bit
+        ++cnt;
     }
+    cout << cnt << ln;
+}
 
-    int count = 4 - sz(st);
-    cout << count << ln;
+void solve(){
+    int n; cin >> n;
+    int cnt(0);
+    while(n){
+        if(n & 1) ++cnt;
+        n >>= 1;
+    }
+    cout << cnt << ln;
 }
 int main(){
+
     stop_sync;
     untie_ios;
     solve();

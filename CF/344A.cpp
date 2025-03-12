@@ -150,18 +150,25 @@ template <typename T, typename S> ostream& operator<<(ostream& os, const pair<T,
 
 
 void solve(){
+    i64 n, i, c = 0;
 
-    set<int> st;
-    for(int i = 0; i < 4; i++){
-        int x;
-        cin >> x;
-        st.insert(x);
+    cin >> n;
+
+    vector<int>a(n);
+    for(i = 0; i < n; i++){
+        cin >> a[i];
     }
-
-    int count = 4 - sz(st);
-    cout << count << ln;
+    
+    for(i = 0; i < n; i++){
+        if(a[i] != a[i+1]){
+            c++;
+        }
+    }
+    cout << c << ln;
+    
 }
 int main(){
+
     stop_sync;
     untie_ios;
     solve();

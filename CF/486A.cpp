@@ -150,18 +150,15 @@ template <typename T, typename S> ostream& operator<<(ostream& os, const pair<T,
 
 
 void solve(){
+    i64 n, a;
+    cin >> n;
+    if(n % 2 == 0) a = n / 2;
+    else a = ((n + 1) / 2) * (-1);
+    cout << a << "\n";
 
-    set<int> st;
-    for(int i = 0; i < 4; i++){
-        int x;
-        cin >> x;
-        st.insert(x);
-    }
-
-    int count = 4 - sz(st);
-    cout << count << ln;
 }
 int main(){
+
     stop_sync;
     untie_ios;
     solve();

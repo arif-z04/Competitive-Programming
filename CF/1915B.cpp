@@ -150,20 +150,43 @@ template <typename T, typename S> ostream& operator<<(ostream& os, const pair<T,
 
 
 void solve(){
+    vs s(3);
+    scanv(s);
+    char ans = '1';
 
-    set<int> st;
-    for(int i = 0; i < 4; i++){
-        int x;
-        cin >> x;
-        st.insert(x);
+    for(int i = 0; i < 3; ++i){
+        for(int j = 0; j < 3; ++j){
+            if(s[i][j] == '?'){
+                map<char, int> m;
+                for(int k = 0; k < 3; ++k){
+                    m[s[i][k]] = 1;
+                }
+
+                for(char c = 'A'; c <= 'C'; ++c){
+                    if(m[c] == 0){
+                        ans = c;
+                        break;
+                    }
+
+                }
+                if(ans!= '1') break;
+            }
+
+
+        }
+        if(ans != '1') break;
     }
+    cout << ans << ln;
 
-    int count = 4 - sz(st);
-    cout << count << ln;
 }
 int main(){
+
     stop_sync;
     untie_ios;
-    solve();
+    int t(1), tcase(0);
+    cin >> t;
+    while(++tcase, t--){
+        solve();
+    }
     return 0;
 }
