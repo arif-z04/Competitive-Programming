@@ -1,32 +1,16 @@
 #include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-#define MAX 1000000
+#include <stdlib.h>
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
 
-int main(){
-
-    char name1[MAX];
-    char name2[MAX];
-
-    fgets(name1, sizeof(name1), stdin);
-    fgets(name2, sizeof(name2), stdin);
-    
-    name1[strcspn("\n", name1)] = '\0';
-    name2[strcspn("\n", name2)] = '\0';
-
-    char c1[1000];
-    strncpy(c1, name1 + strcspn(" ", name1), strlen(name1));
-    char c2[1000];
-    strncpy(c2, name2 + strcspn(" ", name2), strlen(name2));
-
-    printf("%s\n", c1);
-    printf("%s\n", c2);
-    
-    if(strcmp(c1, c2) == 0){
-        printf("ARE Brothers");
+    if (a == 0 && b == 0) {
+        printf("NO\n");
+    } else if(abs(a-b) > 1) {
+        printf("NO\n");
     } else {
-        printf("NOT");
+        printf("YES\n");
     }
-    
+
     return 0;
 }
